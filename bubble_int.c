@@ -29,7 +29,7 @@ int main(void)
         {
             if (nums[j] > nums[j + 1])
             {
-                swap(&nums[j], &nums[j+1)];
+                swap(&nums[j], &nums[j+1]);
                 flag = 1;
             }
         }
