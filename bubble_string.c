@@ -1,11 +1,17 @@
 #include <stdio.h>
 #include <string.h>
 
+void swap(char **s1, char **s2){
+    char *temp;
+    temp = *s1;
+    *s1 = *s2;
+    *s2 = temp;
+}
+
 int main(void)
 {
-    char names[5][10] = {"Ayush", "Anand", "Sangeet", "Khatri", "Dev"};
+    char *names[5] = {"Ayush", "Anand", "Sangeet", "Khatri", "Dev"};
     int i, j;
-    char temp[10];
     for (i = 0; i < 5 - 1; i++)
     {
         for (j = 0; j < 5 - 1; j++)
@@ -14,9 +20,7 @@ int main(void)
             int ans = strcmp(names[j], names[j + 1]);
             if (ans > 1)
             {
-                strcpy(temp, names[j]);
-                strcpy(names[j], names[j + 1]);
-                strcpy(names[j + 1], temp);
+                swap(&names[j], &names[j+1]);
             }
         }
     }
