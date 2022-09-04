@@ -18,17 +18,20 @@ void swap(int *n1,int *n2)
 
 int main(void)
 {
-    int length = 10;
+    int length = 10,index;
     int nums[10] = {10, 7, 8, 5, 2, 4, 3, 1, 9, 6};
     //int nums[10] ={10,7,6};
     for (int i = 1; i < length; i++)
     {
-        for (int j = 0; j <i-1; j++)
+        index=i;
+        for (int j = i-1; j >=0; j--)
         {
-            if(nums[i]<nums[j])
+            if(nums[index]<nums[j])
             {
-                swap(&nums[i],&nums[j]);
+                swap(&nums[index],&nums[j]);
+                index--;
             }
+            
         }
     }
     print_array(nums,length);
