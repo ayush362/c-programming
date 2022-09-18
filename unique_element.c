@@ -2,10 +2,11 @@
 
 void print_array(int nums[10], int length)
 {
-    for(int i=0;i<length;i++)
+    for (int i = 0; i < length; i++)
     {
-        printf("%d ",nums[i]);
+        printf("%d ", nums[i]);
     }
+    printf("\n");
 }
 
 int search_number(int nums[10], int num, int length)
@@ -16,6 +17,7 @@ int search_number(int nums[10], int num, int length)
         if (num == nums[i])
         {
             flag = 1;
+            break;
         }
     }
     return flag;
@@ -36,5 +38,5 @@ int main(void)
             index++;
         }
     }
-    print_array(unique,index);
+    print_array(unique, index);
 }
